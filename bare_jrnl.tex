@@ -1,0 +1,885 @@
+              
+                %% bare_jrnl.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% see http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% journal paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+% Please refer to your journal's instructions for other
+% options that should be set.
+\documentclass[journal,onecolumn]{IEEEtran}
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[journal]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/pkg/ifpdf
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of the IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/pkg/cite
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics.
+%
+% Note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/amsmath
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/pkg/algorithms
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/pkg/algorithmicx
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/array
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a larger sans serif font
+% than the serif footnote size font used in traditional IEEE formatting
+% and thus the need to invoke different subfig.sty package options depending
+% on whether compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/pkg/subfig
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure.
+% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
+% corrections already built into the system in which case a warning will
+% be issued if an attempt is made to load fixltx2e.sty as it is no longer
+% needed.
+% The latest version and documentation can be found at:
+% http://www.ctan.org/pkg/fixltx2e
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/stfloats
+% Do not use the stfloats baselinefloat ability as the IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that the IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/pkg/dblfloatfix
+
+
+
+
+%\ifCLASSOPTIONcaptionsoff
+%  \usepackage[nomarkers]{endfloat}
+% \let\MYoriglatexcaption\caption
+% \renewcommand{\caption}[2][\relax]{\MYoriglatexcaption[#2]{#2}}
+%\fi
+% endfloat.sty was written by James Darrell McCauley, Jeff Goldberg and 
+% Axel Sommerfeldt. This package may be useful when used in conjunction with 
+% IEEEtran.cls'  captionsoff option. Some IEEE journals/societies require that
+% submissions have lists of figures/tables at the end of the paper and that
+% figures/tables without any captions are placed on a page by themselves at
+% the end of the document. If needed, the draftcls IEEEtran class option or
+% \CLASSINPUTbaselinestretch interface can be used to increase the line
+% spacing as well. Be sure and use the nomarkers option of endfloat to
+% prevent endfloat from "marking" where the figures would have been placed
+% in the text. The two hack lines of code above are a slight modification of
+% that suggested by in the endfloat docs (section 8.4.1) to ensure that
+% the full captions always appear in the list of figures/tables - even if
+% the user used the short optional argument of \caption[]{}.
+% IEEE papers do not typically make use of \caption[]'s optional argument,
+% so this should not be an issue. A similar trick can be used to disable
+% captions of packages such as subfig.sty that lack options to turn off
+% the subcaptions:
+% For subfig.sty:
+% \let\MYorigsubfloat\subfloat
+% \renewcommand{\subfloat}[2][\relax]{\MYorigsubfloat[]{#2}}
+% However, the above trick will not work if both optional arguments of
+% the \subfloat command are used. Furthermore, there needs to be a
+% description of each subfigure *somewhere* and endfloat does not add
+% subfigure captions to its list of figures. Thus, the best approach is to
+% avoid the use of subfigure captions (many IEEE journals avoid them anyway)
+% and instead reference/explain all the subfigures within the main caption.
+% The latest version of endfloat.sty and its documentation can obtained at:
+% http://www.ctan.org/pkg/endfloat
+%
+% The IEEEtran \ifCLASSOPTIONcaptionsoff conditional can also be used
+% later in the document, say, to conditionally put the References on a 
+% page by themselves.
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/url
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\usepackage{caption}
+\captionsetup{justification=centering}
+
+% \usepackage[left=1cm,right=12cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{graphicx}
+% \usepackage{todonotes}
+\setlength{\marginparwidth}{11cm}
+
+\graphicspath{ {./pictures/} }
+
+\begin{document}
+
+%
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{Hardware interfaces for flexible timelines}
+%
+%
+% author names and IEEE memberships
+% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+% a structure at a ~ so this keeps an author's name from being broken across
+% two lines.
+% use \thanks{} to gain access to the first footnote area
+% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+% was not built to handle multiple paragraphs
+%
+
+\author{Thibaud Keller,~\IEEEmembership{OSSIA team}}
+        % John~Doe,~\IEEEmembership{Fellow,~OSA,}
+        % and~Jane~Doe,~\IEEEmembership{Life~Fellow,~IEEE}% <-this % stops a space
+% \thanks{M. Shell was with the Department
+% of Electrical and Computer Engineering, Georgia Institute of Technology, Atlanta,
+% GA, 30332 USA e-mail: (see http://www.michaelshell.org/contact.html).}% <-this % stops a space
+% \thanks{J. Doe and J. Doe are with Anonymous University.}% <-this % stops a space
+% \thanks{Manuscript received April 19, 2005; revised August 26, 2015.}}
+
+% note the % following the last \IEEEmembership and also \thanks - 
+% these prevent an unwanted space from occurring between the last author name
+% and the end of the author line. i.e., if you had this:
+% 
+% \author{....lastname \thanks{...} \thanks{...} }
+%                     ^------------^------------^----Do not want these spaces!
+%
+% a space would be appended to the last name and could cause every name on that
+% line to be shifted left slightly. This is one of those "LaTeX things". For
+% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+% "AB" then you have to do: "\textbf{A}\textbf{B}"
+% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
+
+
+
+% The paper headers
+\markboth{GOIPG 2023 Application}
+{Shell \MakeLowercase{\textit{et al.}}: Hardware interfaces for flexible timelines}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+
+
+
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2015 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+% make the title area
+\maketitle
+
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract or keywords.
+\begin{abstract} % Max 300 words
+
+
+Writing Human-Machine interactions for live performance can require representation and control of events through time. Several theoretical models have been developed to that effect over the years and some are implemented in software of various complexity. When it comes to hardware however, time is mostly understood as linear, unique and regular. This is notably the case for systems using one of the most prevalent physical interface to edit and play sequences, the button grid, with it's rich history, from early drum machines to the ever-present Ableton Live controllers of today. This research, drawing from both fields of interactive media notation and New Interfaces for Musical Expression, will explore non-linear temporal models and propose an implementation of common button grids interactions better suited to these models. A prime candidate for this exploration would be the software score\cite{jcelerier:thesis}, where branching timelines can be drawn to execute media sequences and their processing interactively, in parallel scenarios of variable speed and duration.
+The open-ended scheduling score allows would necessitate the elaboration of a divergent approach to translate to a button grid.
+What computing challenges would such a translation entail? This inquiry would first have to establish the minimal essential requirement in score's graphical user interface, and indeed, in its temporal model.
+
+\end{abstract}
+
+% Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+C++, User interface programming, Human computer interaction (HCI), Live performance, Embedded systems.
+\end{IEEEkeywords}
+
+\newpage
+\section{Proposed research} % Max 500 words
+
+\begin{figure*}[!t]
+\includegraphics[width=3cm]{pictures/monome-gridlab.jpg}
+\includegraphics[width=3cm]{pictures/polyend-play.png}
+\includegraphics[width=2.3cm]{pictures/tenori-on.jpg}
+\caption[]{Monome Grids
+%\footnote{monome.org/docs/grid}
+- Polyend Play
+%\footnote{polyend.com/play}
+- Tenori-On
+%\footnote{yamaha.com/en/about/design/synapses/id_005}
+}
+\label{fig:seqs}
+\end{figure*}
+
+\subsection{Aims, objectives and central research question}
+The field of interactive media notation is particularly active in France. This scientific endeavour addresses how the nature of scored material can blur the line between notation and execution, especially with today's growing variety of formats. 
+These formats encompass audio, lights, graphics, up to and including augmented and virtual reality. 
+Advances in this research area have culminated in the development of notable programs including Antescofo\cite{ircam:antescofo}, Iannix\cite{buzzing:iannix} or INScore\cite{grame:inscore}.
+These software and the computing models they incarnate enable writing blueprints for automated processes to assist, accompany, enhance and often bypass the need for human-readable cues and performers. Their use has led to interesting superposition of roles that could be qualified by "scores as conductors", "instruments as scores" or "scores as final pieces". I posit here that hardware sequencers superimpose instruments and notation tools by design. Even in most minimal, bare bone cases, sequencer layouts feature a playing interface, a human readable representation of a sequence end some editing functionalities. 
+
+Interacting with these features bring the trial and error of composition to the real time of instrumental performance. This is referred to as a performance-driven system\cite{nash:liveness}. Where this is fairly common practice in the use of hardware, in the sole use of software however, such propensity for improvisation seems to only be matched in the very niche case of live coding\cite{blackwell:livecoding}. 
+
+This convergence of practices that contributes to the appeal of hardware sequencers often comes at the price of rigid limitations in the manipulation of the structure, both in terms of the signal path and the form of the sequence itself.
+
+In the interactive scores formalism on which we propose to base our work, arrangements and effect chains, like all synthesis and input processing, can be defined with flexible duration, inside interactive timelines. Here lies the main challenge in attempting to fit score's originality in a familiar practice. Even with button grids serving as very low-resolution touchscreens;
+and their various innovative uses of today\footnote{This forum entry lists some of these innovations: forum.ossia.io/t/simplified-portable-interfaces/198} allowing for example the display and control of basic widgets like sliders, routing matrices, patching environment or waveform editors; this research will necessitate a novel implementation. While exploring new paradigms\footnote{For example, a two dimensional representation of time as outlined in the following forum entry: forum.ossia.io/t/dynamic-reshaping-of-sequences/96}, we will strive to outline the specificities of performance-driven systems.
+
+% needed in second column of first page if using \IEEEpubid
+%\IEEEpubidadjcol
+
+\subsection{Existing literature}
+The aforementioned field of interactive media notation\cite{ircam:antescofo}\cite{buzzing:iannix}\cite{grame:inscore} provide extensive references at the cross section of graphical user interface, human input and real time constraints, that are central to this work. 
+The elaboration of the branching timeline model was rooted in research applying Allen's interval algebra\cite{allombert:constraint} and Petry nets\cite{allombert:petri} to musical composition and performance. Conditional branching was later introduced\cite{toro:condition}, prompting further research to cope with the added complexity and uncertainty\cite{arias:colour}. Recently, a research project by a student group at the University of Bordeaux identified several ways to improve the user interface to interact with this model, by comparing common practices across nodal environments\footnote{Official web page: cmarty008.wixsite.com/ux-nodales}. On the hardware side, the latest innovations are most likely presented at the International Conference on New Interfaces for Musical Expression (NIME)\footnote{Official web page: nime.pubpub.org}. The 2021 edition featured both an extensive survey on the use of grid controllers\cite{rossmy:grid} and a taxonomy for the specific type of interaction they demand\cite{pust:taxonomy}, that can serve as a base assessment for our purposes. 
+NIME also features creations of new hardware for sequencing\cite{arellano:radear}, exploring in some cases non-linear approaches\cite{hayes:neurohedron}. In previous editions, several research projects also focused on rethinking and improving upon more classical designs\cite{snyder:jd} including button grids\cite{rossmy:touch}. \\
+
+Note: Innovative work on hardware may also be done in a effort to bridge some accessibility issues\cite{forester:loopblocks}, especially when doing away with the common use of a computer screen and a mouse. These concerns may also be relevant in the work proposed here, since we hope to provide full access to score's functionality without relying on it's current graphical user interface. Implementing a complete controller for the terminal could both be a useful milestone as well as a step towards greater accessibility, in particular for the blind. This topic is carefully considered in score's development, witch already features themes tailored for several forms of color blindness.
+
+\subsection{Contribution to existing knowledge}
+Even with this wealth of available research in the domain of creative interfaces, it is still important to note that the private sector seems to lead the way, at least in terms of popularizing the latest innovations. If many of the products on the market today where made possible by previous academic research, it is indeed land mark commercial products and their wide spread availability that set the standard. Today, this method of ``punching in'' steps along a fixed timeline has become a staple of the producer's tool-set.
+
+As such, one could argue that the practice demonstrates a certain intuitiveness by restriction, if only to the familiarity of a tried-and-true paradigm. It is our assumption that the program Ableton Live in particular, with its long held monopoly and well established feature set, must hinder fair comparisons against a new research project. Innovations in this domain face the added challenge of matching the industry standard in term of usability and convenience. The proposed research hopes to meet this challenge, and in the process, provide open source, generic implementations of button grids interactions and feedback. We believe that laying this ground work can be beneficial for further research on these user experiences. \\
+
+Note: This pursuit for seamless interactions would also tie in with previous theoretical research on embedded systems considering the implementation of interactive scores in Field Programmable Gate Arrays (FPGAS)\cite{arias:fpga}. Working with dedicated hardware of this sort and harnessing the optimization they afford would yield great improvements in the reactivity of real-time interactions. 
+
+% Most innovations done in the private sector and lacking both publicly accessible research as well as open source implementations. Matching the fun of widely available commercial products, before conducting further research on their usage. 
+% Chalenge Ableton Live's monopoly (proprietary, requires laptop and commercial OS)\\
+% Only limited all in one alternatives (also restricted to one type of media: audio OR graphics)\\
+% Available on desktop or embedded with the same limitation, CPU and RAM (no artificial limit)\\
+% distributed computing load.\\ 
+
+
+\section{Research design and methodology} % Max 500 words
+% Please detail the research design and methodologies to be employed in carrying out your scholarship which should be described in sufficient detail to demonstrate your thorough understanding of the research topic: 
+
+\section{Schedule} % Max 500 words
+\subsection{Milestones and deliverables}
+\begin{enumerate}
+    \item Scenario display on a button grid
+    \begin{enumerate}
+        \item Most basic score rendering ("mini scenario" object) 
+        \item Evaluate and implement navigation options (scroll and zoom)
+    \end{enumerate}
+    \item Scenario animations on a button grid
+    \begin{enumerate}
+        \item Evaluate and implement a way to encode bilking animations in midi messages
+        \item Sync interval's blinking with their respective tempo
+    \end{enumerate}
+    \item Execution control on a button grid
+    \begin{enumerate}
+        \item Start, Pause, Stop, Reinitialize, Play from here
+        \item Trigger validation
+        \item Individual intervals Play/Pause 
+        \item Interval speed
+    \end{enumerate}
+    \begin{enumerate}
+        \item Structure control
+        \item Automatic Process mappings
+    \end{enumerate}
+    \item Generic button grid API
+    \item Edition
+    \begin{enumerate}
+        \item Expand original set of hot keys to reach full editing capabilities without the mouse on the original user interface
+        \item Full editing capabilities on a generic command line interface (usable by the blind ?)
+        \item Expand the button grid interface with minimal screen and encoders (in the style of Monome Norns/Grid\footnote{monome.org} or Ableton Push\footnote{ableton.com/en/push})
+        \item States, events, intervals and transition creation, manipulation, deletion, copy and paste
+        \item Process and device display and manipulation
+        \item Trigger and condition manipulation (with logical expressions)
+        \item Empress Zoya\footnote{empresseffects.com/products/zoia} style patching
+    \end{enumerate}
+    \item Optimization
+    \begin{enumerate}
+        \item Fully embedded score with exclusive control on a button grid, minimal screen and encoders
+        \item Exploration of potential hardware acceleration
+        \item Further work on compatibility with heterogeneous embedded and distributed systems
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Risks}
+\subsection{Contingency plans}
+
+\section{Specialist knowledge} % Max 500 words
+% Please describe any specialist knowledge or data required to undertake your proposed research, such as language competency, technical skills or use of specialist software. If this knowledge or data is not already in place, details should be provided as to how it will be acquired over the course of the scholarship: 
+A thorough theoretical understanding of the relevant temporal models will be necessary to propose striped down representations fitted to button grids. 
+% Theoretical understanding of user interaction and feedback
+Additionally, in 2023, the new version of the programming language c++ (c++23) will be officially released. The previous version (c++20) introduced major new features that this version will further extend. Mastering this modern, more generic approach to programming\footnote{This blog entry outlines  the use of these modern techniques in the writing of audio plugins: ossia.io/posts/reflection/} will be instrumental in ensuring the output of this research is as robust and future proof as possible. 
+% embedded systems
+% low level machine-to-machine communication protocols.
+
+\section{Dissemination and Knowledge exchange} % Max 500 words
+% Please outline your plans for the dissemination and knowledge exchange of your research, including publications, conference attendance, poster presentations, reports and outreach activities. Details should also be provided as to how the impact of your research will be measured:
+% ossia docs\\
+% forums\\
+% conferences\\
+% all open source\\
+
+\section{Choice of institution} % Max 500 words
+% can support the acquiring of methods and knowledge necessary to completing the proposed project
+% can provide any facilities and infrastructures or other supports relevant to completing the proposed project
+% can provide an appropriate and comprehensive training programme
+\subsection{Victor Lazzarini}
+\subsection{Maynooth music technology}
+% Iain McCurdy's grid\footnote{Video and introduction at vimeo.com/8886750} \\
+
+\section{Current Ulysses scheme} % Max 300 words
+
+\section{Track record}
+\subsection{Other education} % Max 300 words
+% Please provide any additional information relevant to your academic background which should include the name, location and date(s) of any training courses attended:
+% Workshop Canada ?
+
+\subsection{Research achievements} % Max 300 words
+% Please provide any additional information regarding your research achievements to date such as publications, research awards, creation of data sets and databases, conference papers, patents, excavations, public broadcasts, stage performances, creative writing, creative productions and/or exhibitions:
+% Publications \\
+% Mosca \\ 
+% LAC\footnote{lac2020.sciencesconf.org} \\ 
+% CNRS \\ 
+
+\subsection{Work experience} % Max 300 words
+% Please provide details of any relevant work experience, including voluntary work, to date which should include employers’ names, job titles, nature of duties and responsibilities, as well as duration of employment:
+% SCRIME\footnote{scrime.u-bordeaux.fr} (Lemur, Florent Berthaut, "Percussion par le geste", Metainstrument)\\
+Since the end of 2021, I have been the lead developer of the Viage client application\footnote{github.com/EuclidTradingSystems/viage} for the real-estate market. Ease of use, layout simplicity and navigation calrity have been central concerns in this work. Cross platform compatibility and performances also played a substantial role in trying to provide a sim-less experience for users of non technical background. Direct contact with the client also offers me a privileged look into the scrutiny required by the private sector in terms of convenience and intuitive interfaces. Concurrently, I am also working as the Systems administrator for the Euclid\footnote{euclidtradingsystems.com} company, overseeing the migration to their new data-center. This position involves hardware installation and maintenance, as well as the upkeep and improvement of the software infrastructure to ensure that daily operations are running smoothly. 
+
+\section{Personal statement} % Max 500 words
+% Please highlight any additional information which has not been included elsewhere in the application, e.g.:
+%     • Why do you wish to pursue a higher degree by research?
+%     • Why have you proposed this research topic?
+%     • Why do you feel there is a specific demand for the skill set that you wish to build?
+%     • Why are you particularly suited to this research field?
+%     • Which of your attributes demonstrate your capability to be a good researcher, e.g. motivation, commitment, thirst for knowledge?
+
+\section{Career training and development plan} % Max 1000 words
+% Please provide a career training and development plan which addresses the following:
+%     • What are your career goals and how would this scholarship help you to achieve them?
+%     • How will you go about acquiring the expert knowledge and transferable skills necessary for your professional development, e.g. technical skills, communication skills, analytical skills?
+%     • How would this scholarship enable you to gain skills relevant to employment outside the traditional academic sector?
+%     • How can the scholarship transform your existing skills in those identified as being required to pursue the chosen career?
+
+
+
+
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that the IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command,
+% and the \label for the overall figure must come after \caption.
+% \hfil is used as a separator to get equal spacing.
+% Watch out that the combined width of all the subfigures on a 
+% line do not exceed the text width or a line break will occur.
+%
+%\begin{figure*}[!t]
+%\centering
+%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
+%\label{fig_second_case}}
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat[]), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
+% labels, the optional argument to \subfloat must be present. If a
+% subcaption is not desired, just leave its contents blank,
+% e.g., \subfloat[].
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table and, given that table
+% captions serve much like titles, are usually capitalized except for words
+% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
+% and up, which are usually not capitalized unless they are the first or
+% last word of the caption. Table text will default to \footnotesize as
+% the IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that the IEEE does not put floats in the very first column
+% - or typically anywhere on the first page for that matter. Also,
+% in-text middle ("here") positioning is typically not used, but it
+% is allowed and encouraged for Computer Society conferences (but
+% not Computer Society journals). Most IEEE journals/conferences use
+% top floats exclusively. 
+% Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the
+% \fnbelowfloat command of the stfloats package.
+
+% if have a single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+% do not use \section anymore after \appendix, only \section*
+% is possibly needed
+
+% use appendices with more than one appendix
+% then use \section to start each appendix
+% you must declare a \section before using any
+% \subsection or using \label (\appendices by itself
+% starts a section numbered zero.)
+%
+
+
+\appendices
+% \section{Proof of the First Zonklar Equation}
+% Appendix one text goes here.
+
+% you can choose not to have a title for an appendix
+% if you want by leaving the argument blank
+% \section{}
+% Appendix two text goes here.
+
+
+% use section* for acknowledgment
+% \section*{Acknowledgment}
+% I would like to thank...
+
+
+% Can use something like this to put references on a page
+% by themselves when using endfloat and the captionsoff option.
+\ifCLASSOPTIONcaptionsoff
+  \newpage
+\fi
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+% \bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+
+\begin{thebibliography}{1}
+
+\bibitem{jcelerier:thesis}
+Jean-Michael Celerier. \emph{Authoring interactive media : a logical \& temporal approach}. Computation and Language [cs.CL]. Université de Bordeaux, 2018. English. NNT : 2018BORD0037. tel-01947309 \\
+
+\bibitem{ircam:antescofo}
+José Echeveste, Jean-Louis Giavitto, Arshia Cont.\emph{A Dynamic Timed-Language for Computer-Human Musical Interaction}. [Research Report] RR-8422, INRIA. 2013. hal-00917469 \\
+
+\bibitem{buzzing:iannix}
+Thierry Coduys, Guillaume Jacquemin.\emph{Partitions rétroactives
+avec IanniX}. French. Conference: JIM 2014. Bourges, France \\
+
+\bibitem{grame:inscore}
+Dominique Fober, Yann Orlarey, Stephan Letz, Romain Michon. \emph{A Tree Based Language for Music Score Description}. International Symposium on Computer Music Multidisciplinary Research, Oct 2019, Marseille, France  \\
+
+\bibitem{nash:liveness}
+Chris Nash, Allan Blackwell. \emph{Liveness and Flow in Notation Use}. NIME 2012, University of Michigan, Ann Arbor, MI, USA \\
+
+\bibitem{blackwell:livecoding}
+Alan Blackwell, Alex McLean, James Noble, Julian Rohrhuber. \emph{Collaboration and learning through live coding}. Dagstuhl Reports, 130--168, 2014. http://drops.dagstuhl.de/opus/volltexte/2014/4420 \\
+
+\bibitem{rossmy:grid}
+B. Rossmy, A. Wiethoff. \emph{Musical Grid Interfaces: Past, Present, and Future Directions}. NIME 2021. doi.org/10.21428/92fbeb44.6a2451e6 \\
+
+\bibitem{allombert:constraint}
+A. Allombert, G. Assayag, M. Dessainte-Catherine, C. Rubeda. \emph{Concurrent Constraints Models for Interactive Scores}. SMC 2006, Laboratoire Bordelais de Recherche en Informatique, Bordeaux, France. hal.archives-ouvertes.fr/hal-00307924 \\
+
+\bibitem{allombert:petri}
+A. Allombert, G. Assayag, M. Dessainte-Catherine. \emph{A System of Interactive Scores based on Petri Nets}. SMC 2007, Laboratoire Bordelais de Recherche en Informatique, Bordeaux, France. hal.archives-ouvertes.fr/hal-00307926 \\
+
+\bibitem{toro:condition}
+M. Toro, M. Dessainte-Catherine, P. Baltazar. \emph{A model for interactive scores with temporal constraints and conditional branching}. JIM 2010, Laboratoire Bordelais de Recherche en Informatique, Bordeaux, France. hal.archives-ouvertes.fr/hal-00527154 \\
+
+
+\bibitem{arias:colour}
+J. Arias, M. Dessainte-Catherine, C. Rudea. \emph{Modelling Data Processing for Interactive Scores Using Coloured Petri Nets}. ACSD 2014. ieeexplore.ieee.org/document/7016342 \\
+
+\bibitem{pust:taxonomy}
+S. Püst, L. Gieseke, A. Brennecke. \emph{Interaction Taxonomy for Sequencer-Based Music Performances}. NIME 2021. doi.org/10.21428/92fbeb44.0d5ab18d \\
+
+\bibitem{arellano:radear}
+ARELLANO, Daniel Gábana. MCPHERSON, Andrew P. \emph{Radear: A Tangible Spinning Music Sequencer}. NIME 2014. p. 84-85. \\
+
+\bibitem{hayes:neurohedron}
+Ted Hayes. \emph{Neurohedron: A Nonlinear Sequencer Interface}. NIME 2010, Sydney, Australia \\
+
+\bibitem{snyder:jd}
+J. Snyder, A. P. McPherson. \emph{The JD-1: an Implementation of a Hybrid Keyboard/Sequencer Controller for Analog Synthesizers}. NIME 2012. \\
+
+\bibitem{rossmy:touch}
+B. Rossmy, S. Unger, A. Wiethoff. \emph{TouchGrid – Combining Touch Interaction with Musical Grid Interfaces}. NIME 2021. doi.org/10.21428/92fbeb44.303223db \\
+
+\bibitem{forester:loopblocks}
+A. Förster, M. Komesker. \emph{LoopBlocks: Design and Preliminary Evaluation of an Accessible Tangible Musical Step Sequencer}. NIME 2021. doi.org/10.21428/92fbeb44.f45e1caf \\
+
+\bibitem{arias:fpga}
+J. Arias, M. Desainte-Catherine, C. Rueda. \emph{Exploiting Parallelism in FPGAs for the Real-Time Interpretation of Interactive Multimedia Scores}. JIM 2015. hal.archives-ouvertes.fr/hal-01129316 \\
+
+\bibitem{hunt:poly}
+Samuel J. Hunt. \emph{Exploring polyrhythms, polymeters, and polytempi with the universal grid sequencer framework}. In Proceedings of the 15th International Conference on Audio Mostly (AM) 2020. Association for Computing Machinery, New York, NY, USA, 101–106. doi.org/10.1145/3411109.3411122 \\
+
+\end{thebibliography}
+
+% biography section
+% 
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are
+% needed around the contents of the optional argument to biography to prevent
+% the LaTeX parser from getting confused when it sees the complicated
+% \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things
+% simpler here.)
+%\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
+% or if you just want to reserve a space for a photo:
+
+% \begin{IEEEbiography}{Michael Shell}
+% Biography text here.
+% \end{IEEEbiography}
+
+% if you will not have a photo at all:
+% \begin{IEEEbiographynophoto}{John Doe}
+% Biography text here.
+% \end{IEEEbiographynophoto}
+
+% insert where needed to balance the two columns on the last page with
+% biographies
+%\newpage
+
+% \begin{IEEEbiographynophoto}{Jane Doe}
+% Biography text here.
+% \end{IEEEbiographynophoto}
+
+% You can push biographies down or up by placing
+% a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is
+% on the last page and whether or not the columns
+% are being equalized.
+
+%\vfill
+
+% Can be used to pull up biographies so that the bottom of the last one
+% is flush with the other column.
+%\enlargethispage{-5in}
+
+
+
+% that's all folks
+\end{document}
