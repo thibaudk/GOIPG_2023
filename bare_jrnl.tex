@@ -369,7 +369,8 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{Hardware interfaces for flexible timelines}
+\title{The Digital Performance Score:\\
+Hardware interfaces for elastic timelines}
 %
 %
 % author names and IEEE memberships
@@ -412,7 +413,8 @@
 
 % The paper headers
 \markboth{GOIPG 2023 Application}
-{Shell \MakeLowercase{\textit{et al.}}: Hardware interfaces for flexible timelines}
+{Shell \MakeLowercase{\textit{et al.}}: The Digital Performance Score:\\
+Hardware interfaces for elastic timelines}
 % The only time the second header will appear is for the odd numbered pages
 % after the title page when using the twoside option.
 % 
@@ -446,15 +448,15 @@
 \begin{abstract} % Max 300 words
 
 
-Designing Human-Machine interactions for live performance can require representation and control of events through time. Several theoretical models have been developed to that effect over the years and some are implemented in software of various complexity. When it comes to hardware however, time is mostly understood as linear, unique and regular. This is notably the case for systems using one of the most prevalent physical interface to edit and play sequences, the button grid, with its rich history, from early drum machines to the ever-present Ableton Live controllers of today. This research, drawing from both fields of interactive media notation and New Interfaces for Musical Expression, will explore non-linear temporal models and propose an implementation of common phisycal interfaces and interactions better suited to these models. A prime candidate for this exploration would be the interactive scores as implemented in the software \textit{ossia score}\cite{jcelerier:thesis}, where branching timelines can be drawn to execute media sequences and their processing interactively, in parallel scenarios of variable speed and duration.
+Designing Human-Machine interactions for live performance can require representation and control of events through time. Several theoretical models have been developed to that effect over the years and some are implemented in software of various complexity. When it comes to hardware however, time is mostly understood as linear, unique and regular. This is notably the case for systems using one of the most prevalent physical interface to edit and play sequences, the button grid, with its rich history, from early drum machines to the ever-present Digital Audio Workstaion controllers of today. This research, drawing from both fields of interactive media notation and New Interfaces for Musical Expression, will explore non-linear temporal models and propose an implementation of common phisycal interfaces and interactions better suited to these models. A prime candidate for this exploration would be the interactive scores as implemented in the software \textit{ossia score}\cite{jcelerier:thesis}, where branching timelines can be drawn to execute media sequences and their processing interactively, in parallel scenarios of variable speed and duration.
 The open-ended scheduling \textit{ossia score} allows would necessitate the elaboration of a divergent approach to translate to a hardware interface for musical expression.
-What computing challenges would such a translation entail? This inquiry would first have to establish the minimal essential requirement in score's graphical user interface, and indeed, in its temporal model.
+What computing challenges would such a translation entail ? This inquiry would first have to establish the minimal essential requirement in score's graphical user interface, and indeed, in its temporal model.
 
 \end{abstract}
 
 % Note that keywords are not normally used for peerreview papers.
 \begin{IEEEkeywords}
-C++, User interface programming, Human computer interaction (HCI), Live performance, Embedded systems.
+Music programming environments, Live performance, Human computer interaction (HCI), User interface programming, Embedded systems.
 \end{IEEEkeywords}
 
 \newpage
@@ -462,9 +464,9 @@ C++, User interface programming, Human computer interaction (HCI), Live performa
 
 \begin{figure*}[!t]
 \centering
-\includegraphics[width=3cm]{pictures/monome-gridlab.jpg}
-\includegraphics[width=3cm]{pictures/polyend-play.png}
-\includegraphics[width=2.3cm]{pictures/tenori-on.jpg}
+\includegraphics[width=6cm]{pictures/monome-gridlab.jpg}
+\includegraphics[width=6cm]{pictures/polyend-play.png}
+\includegraphics[width=4.6cm]{pictures/tenori-on.jpg}
 \caption[]{Monome Grids
 %\footnote{monome.org/docs/grid}
 - Polyend Play
@@ -476,15 +478,12 @@ C++, User interface programming, Human computer interaction (HCI), Live performa
 \end{figure*}
 
 \subsection{Aims, objectives and central research question}
-The field of interactive media notation is particularly active in France. It addresses how the nature of scored material blurs the line between notation and execution, especially with today's growing variety of data formats. 
-These formats encompass audio, lights, graphics, up to and including augmented and virtual reality. 
+The field of interactive media notation addresses how the nature of scored material blurs the line between notation and execution. This is especially the case with today's growing variety of data formats, encompassing audio, lights, graphics, up to and including augmented and virtual reality. 
 Advances in this research area have culminated in the development of notable programs including Antescofo\cite{ircam:antescofo}, Iannix\cite{buzzing:iannix} or INScore\cite{grame:inscore}.
-These software and the computing models they implement enable writing blueprints for automated processes to assist, accompany, enhance and often bypass the need for human-readable cues and performers. Their use has led to interesting superposition of roles that could be qualified by "scores as conductors", "instruments as scores" or "scores as final pieces". I posit here that hardware sequencers superimpose instruments and notation tools by design. Even in their most minimal, bare bone cases, sequencer layouts feature a playing interface, a human readable representation of a sequence end some editing functionalities. 
-
-Interacting with these features bring the trial and error of composition to the real time of instrumental performance. This is referred to as a performance-driven system\cite{nash:liveness}. Where this is fairly common practice in the use of hardware, in the sole use of software however, such propensity for improvisation seems to only be matched in the very niche case of live coding\cite{blackwell:livecoding}. 
-
+Each in their own right, these software are unparalleled in the music technology landscape. The computing models they implement enable writing blueprints for automated processes to assist, accompany, enhance and often bypass the need for human-readable cues and performers. Their use has led to interesting superposition of roles that could be qualified by "scores as conductors", "instruments as scores" or "scores as final pieces". I posit here that hardware sequencers superimpose instruments and notation tools by design. Even in their most minimal, bare bone cases, sequencer layouts feature a playing interface, a human readable representation of a sequence end some editing functionalities.
+Interacting with these features bring the trial and error of composition to the real time of instrumental performance. This is referred to as a performance-driven system\cite{nash:liveness}. Where this is fairly common practice in the use of hardware, in the sole use of software however, such propensity for improvisation seems to only be matched in the very niche case of live coding\cite{blackwell:livecoding}.
+How can we interact with open ended, abstract software on finite physical interfaces ? This question is particularly delicate with our software of interest straying far away from the norm, and hardware interfaces incarnate conventions in musical expression.
 This convergence of practices that contributes to the appeal of hardware sequencers often comes at the price of rigid limitations in the manipulation of the structure, both in terms of the signal path and the form of the sequence itself.
-
 In the interactive scores formalism on which we propose to base our work, arrangements and effect chains, like all synthesis and input processing, can be defined with flexible duration, inside interactive timelines. Here lies the main challenge in attempting to fit score's originality in a familiar practice. Even with button grids serving as very low-resolution touchscreens;
 and their various innovative uses of today\footnote{This forum entry lists some of these innovations: forum.ossia.io/t/simplified-portable-interfaces/198} allowing for example the display and control of basic widgets like sliders, routing matrices, patching environment or waveform editors; this research will necessitate a novel implementation. While exploring new paradigms\footnote{For example, a two dimensional representation of time as outlined in the following forum entry: forum.ossia.io/t/dynamic-reshaping-of-sequences/96}, we will strive to outline the specificities of performance-driven systems (as in \cite{nash:liveness}).
 
@@ -563,7 +562,7 @@ Note: This pursuit for seamless interactions would also tie in with previous the
 % Please describe any specialist knowledge or data required to undertake your proposed research, such as language competency, technical skills or use of specialist software. If this knowledge or data is not already in place, details should be provided as to how it will be acquired over the course of the scholarship: 
 A thorough theoretical understanding of the relevant temporal models will be necessary to propose striped down representations fitted to hardware interfaces. 
 % Theoretical understanding of user interaction and feedback
-Additionally, in 2023, the new version of the programming language c++ (c++23) will be officially released. The previous version (c++20) introduced major new features that this version will further extend. Mastering this modern, more generic approach to programming\footnote{This blog entry outlines  the use of these modern techniques in the writing of audio plugins: ossia.io/posts/reflection/} will be instrumental in ensuring the output of this research is as robust and future proof as possible. 
+Additionally, in 2023, the new version of the programming language C++ (c++23) will be officially released. The previous version (c++20) introduced major new features that this version will further extend. Mastering this modern, more generic approach to programming\footnote{This blog entry outlines  the use of these modern techniques in the writing of audio plugins: ossia.io/posts/reflection/} will be instrumental in ensuring the output of this research is as robust and future proof as possible. 
 % embedded systems
 % low level machine-to-machine communication protocols.
 
