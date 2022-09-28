@@ -353,6 +353,7 @@
 \usepackage{caption}
 \captionsetup{justification=centering}
 
+\usepackage{enumerate}
 % \usepackage[left=1cm,right=12cm,top=3cm,bottom=3cm]{geometry}
 \usepackage{graphicx}
 % \usepackage{todonotes}
@@ -447,7 +448,6 @@ Hardware interfaces for elastic timelines}
 % in the abstract or keywords.
 \begin{abstract} % Max 300 words
 
-
 Designing Human-Machine interactions for live performance can require representation and control of events through time. Several theoretical models have been developed to that effect over the years and some are implemented in software of various complexity. When it comes to hardware however, time is mostly understood as linear, unique and regular. This is notably the case for systems using one of the most prevalent physical interface to edit and play sequences, the button grid, with its rich history, from early drum machines to the ever-present Digital Audio Workstaion controllers of today. This research, drawing from both fields of interactive media notation and New Interfaces for Musical Expression, will explore non-linear temporal models and propose an implementation of common phisycal interfaces and interactions better suited to these models. A prime candidate for this exploration would be the interactive scores as implemented in the software \textit{ossia score}\cite{jcelerier:thesis}, where branching timelines can be drawn to execute media sequences and their processing interactively, in parallel scenarios of variable speed and duration.
 The open-ended scheduling \textit{ossia score} allows would necessitate the elaboration of a divergent approach to translate to a hardware interface for musical expression.
 What computing challenges would such a translation entail ? This inquiry would first have to establish the minimal essential requirement in score's graphical user interface, and indeed, in its temporal model.
@@ -478,11 +478,11 @@ Music programming environments, Live performance, Human computer interaction (HC
 \end{figure*}
 
 \subsection{Aims, objectives and central research question}
+How can we interact with open ended, abstract software on finite physical interfaces ? This question is particularly delicate with software straying far away from the norm, and hardware interfaces incarnating conventions in musical expression.
 The field of interactive media notation addresses how the nature of scored material blurs the line between notation and execution. This is especially the case with today's growing variety of data formats, encompassing audio, lights, graphics, up to and including augmented and virtual reality. 
 Advances in this research area have culminated in the development of notable programs including Antescofo\cite{ircam:antescofo}, Iannix\cite{buzzing:iannix} or INScore\cite{grame:inscore}.
 Each in their own right, these software are unparalleled in the music technology landscape. The computing models they implement enable writing blueprints for automated processes to assist, accompany, enhance and often bypass the need for human-readable cues and performers. Their use has led to interesting superposition of roles that could be qualified by "scores as conductors", "instruments as scores" or "scores as final pieces". I posit here that hardware sequencers superimpose instruments and notation tools by design. Even in their most minimal, bare bone cases, sequencer layouts feature a playing interface, a human readable representation of a sequence end some editing functionalities.
 Interacting with these features bring the trial and error of composition to the real time of instrumental performance. This is referred to as a performance-driven system\cite{nash:liveness}. Where this is fairly common practice in the use of hardware, in the sole use of software however, such propensity for improvisation seems to only be matched in the very niche case of live coding\cite{blackwell:livecoding}.
-How can we interact with open ended, abstract software on finite physical interfaces ? This question is particularly delicate with our software of interest straying far away from the norm, and hardware interfaces incarnate conventions in musical expression.
 This convergence of practices that contributes to the appeal of hardware sequencers often comes at the price of rigid limitations in the manipulation of the structure, both in terms of the signal path and the form of the sequence itself.
 In the interactive scores formalism on which we propose to base our work, arrangements and effect chains, like all synthesis and input processing, can be defined with flexible duration, inside interactive timelines. Here lies the main challenge in attempting to fit score's originality in a familiar practice. Even with button grids serving as very low-resolution touchscreens;
 and their various innovative uses of today\footnote{This forum entry lists some of these innovations: forum.ossia.io/t/simplified-portable-interfaces/198} allowing for example the display and control of basic widgets like sliders, routing matrices, patching environment or waveform editors; this research will necessitate a novel implementation. While exploring new paradigms\footnote{For example, a two dimensional representation of time as outlined in the following forum entry: forum.ossia.io/t/dynamic-reshaping-of-sequences/96}, we will strive to outline the specificities of performance-driven systems (as in \cite{nash:liveness}).
@@ -514,48 +514,50 @@ Note: This pursuit for seamless interactions would also tie in with previous the
 
 \section{Schedule} % Max 500 words
 \subsection{Milestones and deliverables}
+\renewcommand{\theenumi}{M.\arabic{enumi}}
+\renewcommand{\theenumii}{d.\arabic{enumi}.\arabic{enumii}}
 \begin{enumerate}
-    \item Scenario display on a button grid
+    \item Scenario display
     \begin{enumerate}
-        \item Most basic score rendering ("mini scenario" object) 
-        \item Evaluate and implement navigation options (scroll and zoom)
+        \item Elaboration of the most rudimentary graphical semantic
+        \item Appraisal of the most appropriate navigation interactions
+        \item Assessment of additional visual cues and their importance (colour coding, basic animations ...)
+        \item Publication of the thesis's first chapter on the proposed graphical representation of interactive scores
     \end{enumerate}
-    \item Scenario animations on a button grid
+    \item Execution control
     \begin{enumerate}
-        \item Evaluate and implement a way to encode bilking animations in midi messages
-        \item Sync interval's blinking with their respective tempo
+        \item Ranking of controls, from most essential to least
+        \item Elaboration of metrics to classify controls convenience (number of actions required, time spent to access the control, consistency with similar actions ...)
+        \item Development of basic interactive score control according to the above specifications
+        \item Publication of the thesis's second chapter and demonstration of the current state of the system
     \end{enumerate}
-    \item Execution control on a button grid
+    \item Generalisation
     \begin{enumerate}
-        \item Start, Pause, Stop, Reinitialize, Play from here
-        \item Trigger validation
-        \item Individual intervals Play/Pause 
-        \item Interval speed
+        \item Exploring a variety of other common interfaces and their compatibility with the current system
+        \item Improving the current system for wider compatibility with current and future devices.
+        \item Publication of the thesis's third chapter documenting a generic approach to interaction on hardware interfaces
     \end{enumerate}
-    \begin{enumerate}
-        \item Structure control
-        \item Automatic Process mappings
-    \end{enumerate}
-    \item Generic button grid API
     \item Edition
     \begin{enumerate}
-        \item Expand original set of hot keys to reach full editing capabilities without the mouse on the original user interface
-        \item Full editing capabilities on a generic command line interface (usable by the blind ?)
-        \item Expand the button grid interface with minimal screen and encoders (in the style of Monome Norns/Grid\footnote{monome.org} or Ableton Push\footnote{ableton.com/en/push})
-        \item States, events, intervals and transition creation, manipulation, deletion, copy and paste
-        \item Process and device display and manipulation
-        \item Trigger and condition manipulation (with logical expressions)
-        \item Empress Zoya\footnote{empresseffects.com/products/zoia} style patching
+        \item Expanding original set of hot keys on the score software to reach full editing capabilities without the mouse on the original user interface
+        \item Cross examining keyboard based interactions in the area of live coding and software accessibility for the sight impaired
+        \item Evaluation of necessary textual feedback (data can only be communicated to the user through text)
+        \item Exploration of preformative substitute to menus (and dreaded "menu diving")
+        \item Experimentation of more unusual uses of hardware interfaces (like patching environnement of the Empress Zoya\footnote{Official web page: empresseffects.com/products/zoia}
+        \item Publication of the thesis's forth chapter, accompanying an official release of the system considered "production ready".
     \end{enumerate}
-    \item Optimization
+    \item Going further
     \begin{enumerate}
-        \item Fully embedded score with exclusive control on a button grid, minimal screen and encoders
+        \item Expansion of compatibility to heterogeneous configurations on multiple hardware interfaces
+        \item Experimentation with fully embedded interactive score without traditional mouse, keyboards an computer screen
         \item Exploration of potential hardware acceleration
-        \item Further work on compatibility with heterogeneous embedded and distributed systems
+        \item Assessment of the benefit in collaborative projects between traditional interactive score authoring and our system
+        \item Full Thesis
     \end{enumerate}
 \end{enumerate}
 
 \subsection{Risks}
+Too close to existing literature, so the research ought to be more applied, or too far form the existent, so the research ought to be more theoretical.
 \subsection{Contingency plans}
 
 \section{Specialist knowledge} % Max 500 words
