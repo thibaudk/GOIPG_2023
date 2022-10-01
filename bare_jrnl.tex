@@ -498,7 +498,10 @@ NIME also features creations of new hardware for sequencing\cite{arellano:radear
 \subsection{Contribution to existing knowledge}
 Even with this wealth of available research in the domain of creative interfaces, the private sector seems to lead the way, at least in terms of popularization the latest innovations. If many of the products on the market today where made possible by previous academic research, it is indeed land mark commercial products and their wide spread availability that set the standard. Today, this method of ``punching in'' steps along a fixed timeline has become a staple of the producer's tool-set.
 
-As such, one could argue that the practice demonstrates a certain intuitiveness by restriction, if only to the familiarity of a tried-and-true paradigm. It is our assumption that the program Ableton Live in particular, with its long held monopoly and well established feature set, must hinder fair comparisons against a new research project. Innovations in this domain face the added challenge of matching the industry standard in term of usability and convenience. The proposed research hopes to meet this challenge, and in the process, provide open source, generic implementations of button grids interactions and feedback. We believe that laying this ground work can be beneficial for further research on these user experiences. \\
+As such, one could argue that the practice demonstrates intuitiveness by restriction, if only to the familiarity of a tried-and-true paradigm. The work of Samuel J. Hunt\cite{hunt:poly} aims to remove the restriction to a single timeline. His Universal Grid Sequencer (UGS) allows first to aggregate several button grids controllers together to form a larger unified interface, and secondly, to create independent sequences executed simultaneously on this interface. Instrumental patterns created with the UGS framework fall in and out of phase with each other according to predefined numbers of steps and tempos. It leverages hardware interactions for more tangible feedback of potentially complex temporal and rhythmical relationships. Although close to the research we propose, this work outlines the clear delineation between composition and performance that interactive scores challenge. Since only the content of patterns can be interacted with in real time in the UGS framework, only rhythmical information, and pitch to a lower extend, are considered "perfomable" parameters. Tempo, time signature and structure rarely feature as interactive parameters. Their consideration often belong solely to the realm of composition, arrangement or even mixing, distinct from performance in both time and tools.
+The careful software design choices
+
+It is our assumption that the program Ableton Live in particular, with its long held monopoly and well established feature set, must hinder fair comparisons against a new research project. Innovations in this domain face the added challenge of matching the industry standard in term of usability and convenience. The proposed research hopes to meet this challenge, and in the process, provide open source, generic implementations of button grids interactions and feedback. We believe that laying this ground work can be beneficial for further research on these user experiences. \\
 
 Note: This pursuit for seamless interactions would also tie in with previous theoretical research on embedded systems considering the implementation of interactive scores in Field Programmable Gate Arrays (FPGAS)\cite{arias:fpga}. Working with such dedicated hardware and harnessing the optimization they afford would yield great improvements in the reactivity of real-time interactions\cite{popoff:fpga}. 
 
@@ -511,6 +514,7 @@ Note: This pursuit for seamless interactions would also tie in with previous the
 
 \section{Research design and methodology} % Max 500 words
 % Please detail the research design and methodologies to be employed in carrying out your scholarship which should be described in sufficient detail to demonstrate your thorough understanding of the research topic: 
+
 
 \section{Schedule} % Max 500 words
 \subsection{Milestones and deliverables}
@@ -543,7 +547,7 @@ Note: This pursuit for seamless interactions would also tie in with previous the
         \item Cross examining keyboard based interactions in the area of live coding and software accessibility for the sight impaired
         \item Evaluation of necessary textual feedback (data can only be communicated to the user through text)
         \item Exploration of preformative substitute to menus (and dreaded "menu diving")
-        \item Experimentation of more unusual uses of hardware interfaces (like patching environnement of the Empress Zoya\footnote{Official web page: empresseffects.com/products/zoia}
+        \item Experimentation of more unusual uses of hardware interfaces (like the patching environment of the Empress Zoya\footnote{Official web page: empresseffects.com/products/zoia})
         \item Publication of the thesis's forth chapter, accompanying an official release of the system considered "production ready".
     \end{enumerate}
     \item Going further
@@ -616,10 +620,6 @@ Since the end of 2021, I have been the lead developer of the Viage client applic
 %     • How will you go about acquiring the expert knowledge and transferable skills necessary for your professional development, e.g. technical skills, communication skills, analytical skills?
 %     • How would this scholarship enable you to gain skills relevant to employment outside the traditional academic sector?
 %     • How can the scholarship transform your existing skills in those identified as being required to pursue the chosen career?
-
-
-
-
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
@@ -809,7 +809,6 @@ A. Allombert, G. Assayag, M. Dessainte-Catherine. \emph{A System of Interactive 
 \bibitem{toro:condition}
 M. Toro, M. Dessainte-Catherine, P. Baltazar. \emph{A model for interactive scores with temporal constraints and conditional branching}. JIM 2010, Laboratoire Bordelais de Recherche en Informatique, Bordeaux, France. hal.archives-ouvertes.fr/hal-00527154 \\
 
-
 \bibitem{arias:colour}
 J. Arias, M. Dessainte-Catherine, C. Rudea. \emph{Modelling Data Processing for Interactive Scores Using Coloured Petri Nets}. ACSD 2014. ieeexplore.ieee.org/document/7016342 \\
 
@@ -830,6 +829,12 @@ B. Rossmy, S. Unger, A. Wiethoff. \emph{TouchGrid – Combining Touch Interactio
 
 \bibitem{forester:loopblocks}
 A. Förster, M. Komesker. \emph{LoopBlocks: Design and Preliminary Evaluation of an Accessible Tangible Musical Step Sequencer}. NIME 2021. doi.org/10.21428/92fbeb44.f45e1caf \\
+
+\bibitem{hunt:poly}
+S. J. Hunt. \emph{Exploring Polyrhythms, Polymeters, and Polytempi
+with the Universal Grid Sequencer framework}. In Proceedings of the 15th
+International Audio Mostly Conference (AM’20), September 15–17, 2020, Graz, Austria. ACM, New York, NY, USA, 6 pages. https://doi.org/10.1145/3411109.
+3411122 \\
 
 \bibitem{arias:fpga}
 J. Arias, M. Desainte-Catherine, C. Rueda. \emph{Exploiting Parallelism in FPGAs for the Real-Time Interpretation of Interactive Multimedia Scores}. JIM 2015. hal.archives-ouvertes.fr/hal-01129316 \\
