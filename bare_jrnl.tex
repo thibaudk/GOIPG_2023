@@ -448,7 +448,7 @@ Hardware interfaces for elastic timelines}
 % in the abstract or keywords.
 \begin{abstract} % Max 300 words
 
-Designing Human-Machine interactions for live performance can require representation and control of events through time. Several theoretical models have been developed to that effect over the years and some are implemented in software of various complexity. When it comes to hardware however, time is mostly understood as linear, unique and regular. This is notably the case for systems using one of the most prevalent physical interface to edit and play sequences, the button grid, with its rich history, from early drum machines to the ever-present Digital Audio Workstaion controllers of today. This research, drawing from both fields of interactive media notation and New Interfaces for Musical Expression, will explore non-linear temporal models and propose an implementation of common phisycal interfaces and interactions better suited to these models. A prime candidate for this exploration would be the interactive scores as implemented in the software \textit{ossia score}\cite{jcelerier:thesis}, where branching timelines can be drawn to execute media sequences and their processing interactively, in parallel scenarios of variable speed and duration.
+Designing Human-Machine interactions for live performance can require representation and control of events through time. Several theoretical models have been developed to that effect over the years and some are implemented in software of various complexity. When it comes to hardware however, time is mostly understood as linear, unique and regular. This is notably the case for systems using one of the most prevalent physical interface to edit and play sequences, the button grid, with its rich history, from early drum machines to the ever-present Digital Audio Workstation controllers of today. This research, drawing from both fields of interactive media notation and New Interfaces for Musical Expression, will explore non-linear temporal models and propose an implementation of common physical interfaces and interactions better suited to these models. A prime candidate for this exploration would be the interactive scores as implemented in the software \textit{ossia score}\cite{jcelerier:thesis}, where branching timelines can be drawn to execute media sequences and their processing interactively, in parallel scenarios of variable speed and duration.
 The open-ended scheduling \textit{ossia score} allows would necessitate the elaboration of a divergent approach to translate to a hardware interface for musical expression.
 What computing challenges would such a translation entail ? This inquiry would first have to establish the minimal essential requirement in score's graphical user interface, and indeed, in its temporal model.
 
@@ -468,7 +468,7 @@ Music programming environments, Live performance, Human computer interaction (HC
 \includegraphics[width=6cm]{pictures/polyend-play.png}
 \includegraphics[width=4.6cm]{pictures/tenori-on.jpg}
 \caption[]{Monome Grids
-%\footnote{monome.org/docs/grid}
+% \footnote{monome.org/docs/grid}
 - Polyend Play
 %\footnote{polyend.com/play}
 - Tenori-On
@@ -498,10 +498,10 @@ NIME also features creations of new hardware for sequencing\cite{arellano:radear
 \subsection{Contribution to existing knowledge}
 Even with this wealth of available research in the domain of creative interfaces, the private sector seems to lead the way, at least in terms of popularization the latest innovations. If many of the products on the market today where made possible by previous academic research, it is indeed land mark commercial products and their wide spread availability that set the standard. Today, this method of ``punching in'' steps along a fixed timeline has become a staple of the producer's tool-set.
 
-As such, one could argue that the practice demonstrates intuitiveness by restriction, if only to the familiarity of a tried-and-true paradigm. The work of Samuel J. Hunt\cite{hunt:poly} aims to remove the restriction to a single timeline. His Universal Grid Sequencer (UGS) allows first to aggregate several button grids controllers together to form a larger unified interface, and secondly, to create independent sequences executed simultaneously on this interface. Instrumental patterns created with the UGS framework fall in and out of phase with each other according to predefined numbers of steps and tempos. It leverages hardware interactions for more tangible feedback of potentially complex temporal and rhythmical relationships. Although close to the research we propose, this work outlines the clear delineation between composition and performance that interactive scores challenge. Since only the content of patterns can be interacted with in real time in the UGS framework, only rhythmical information, and pitch to a lower extend, are considered "perfomable" parameters. Tempo, time signature and structure rarely feature as interactive parameters. Their consideration often belong solely to the realm of composition, arrangement or even mixing, distinct from performance in both time and tools.
-The careful software design choices
+As such, one could argue that the practice demonstrates intuitiveness by restriction, if only to the familiarity of a tried-and-true paradigm. It is our assumption that the program Ableton Live in particular, with its long held monopoly and well established feature set, may hinder fair comparisons against a new research project. Innovations in this domain face the added challenge of matching the industry standard in term of usability and convenience. The proposed research hopes to meet this challenge, and in the process, provide open source, generic implementations of button grids interactions and feedback. We believe that laying this ground work can be beneficial for further research on these user experiences. 
 
-It is our assumption that the program Ableton Live in particular, with its long held monopoly and well established feature set, must hinder fair comparisons against a new research project. Innovations in this domain face the added challenge of matching the industry standard in term of usability and convenience. The proposed research hopes to meet this challenge, and in the process, provide open source, generic implementations of button grids interactions and feedback. We believe that laying this ground work can be beneficial for further research on these user experiences. \\
+The work of Samuel J. Hunt\cite{hunt:poly} aims to remove the restriction to a single timeline. His Universal Grid Sequencer (UGS) allows to create independent sequences executed simultaneously on one or more button grids controllers. It leverages hardware interactions for more tangible feedback of potentially complex temporal and rhythmical relationships. Instrumental patterns created with the UGS framework can fall in and out of phase or synchronisation according to predefined numbers of steps and tempos. Such patterns are designed in two distinct stages. Before stating the system, multiple instances are setup in software, with hard-coded voices, steps and tempo. The content of itch patterns can then be edited on the fly once the system is running. With individual steps represented by a single cell of the physical interface, patterns of different length must run at different speeds to be synchronised. This is a graphical restriction imposed by the hardware display, but, as we hope to demonstrate in more details, it offers a new perspective on the representation of time. Although close to the research we propose, this work outlines the clear delineation between composition and performance that interactive scores challenge. In the UGS framework, like most step-sequencers, only rhythmical information, and pitch to a lower extend, are considered "perfomable" parameters. Tempo, time signature and structure in general rarely feature as interactive parameters. The UGS can Their consideration often belong solely to the realm of composition, arrangement or even mixing, distinct from performance in both time and tools.
+The careful software design choices \\
 
 Note: This pursuit for seamless interactions would also tie in with previous theoretical research on embedded systems considering the implementation of interactive scores in Field Programmable Gate Arrays (FPGAS)\cite{arias:fpga}. Working with such dedicated hardware and harnessing the optimization they afford would yield great improvements in the reactivity of real-time interactions\cite{popoff:fpga}. 
 
@@ -588,23 +588,22 @@ Additionally, in 2023, the new version of the programming language C++ (c++23) w
 % Iain McCurdy's grid\footnote{Video and introduction at vimeo.com/8886750} \\
 
 \section{Current Ulysses scheme} % Max 300 words
+Dr Gordon Delap and I where awarded the 2021 Ulysses grant. Our ongoing project entitled "Three dimensional audio and musical experimentation" aims to extend the collaboration we started during gordon's sabatical. For almost a year prior to our application, Gordon was testing and composing with the software \textit{Mosca}\cite{mott:mosca} that I develop. Gordon's unique approach and technical proficiency provided great insight for further development and fine tuning of the software. although delayed by the pandemic, the Ulysses grant allowed me to visit the university of Maynouth and the staff of the music technology department. Gordon and I also gave a talk and a workshop for students. Subsequently, Dr Iain McCurdy, Dr Shane Byrne and Professor Victor Lazzarini where invited to give public presentation at SCRIME\footnote{Studio for creation and research in experimental music: scrime.u-bordeaux.fr}. In the mean time, the Berlin based company LUCH.US started using \textit{Mosca} in combination with \textit{ossia score} for the "PARALLEL WELT" project\footnote{Web page of the project: www.english.luchs.us/parallel-world}. The principal of this project was first developed by Iain Mott\cite{mott:botanica} and further optimised by Gaël Jaton and myself\cite{jaton:moscanica}. "PARALLEL WELT" was presented at the 2021 edition of the "Places" festival in Germany\footnote{Official web page: places-festival.de/en}. We are currently organising the second and final sets of presentations for our Ulysses program where I'll be focusing on these latest developments.
 
 \section{Track record}
-\subsection{Other education} % Max 300 words
+% \subsection{Other education} % Max 300 words
 % Please provide any additional information relevant to your academic background which should include the name, location and date(s) of any training courses attended:
 % Workshop Canada ?
 
 \subsection{Research achievements} % Max 300 words
 % Please provide any additional information regarding your research achievements to date such as publications, research awards, creation of data sets and databases, conference papers, patents, excavations, public broadcasts, stage performances, creative writing, creative productions and/or exhibitions:
-% Publications \\
-% Mosca \\ 
-% LAC\footnote{lac2020.sciencesconf.org} \\ 
-% CNRS \\ 
+I am very fortunate to have participated to many workshop and conferences in France and abroad since 2019. That year in particular, I presented my work at the Linux Audio Conference at Stanford university. My colleague Jean-Michaël Celerier and I then hosted the following edition of the conference in Bordeaux\footnote{Main web page: lac2020.sciencesconf.org}, with the help of both public and private partners. 
+My expertise in multichannel audio also brought me in 2020 to the university of Bilbao, where I was asked to coordinate the installation of an immersive sound system, and introduce students and faculty to it's use.
 
 \subsection{Work experience} % Max 300 words
 % Please provide details of any relevant work experience, including voluntary work, to date which should include employers’ names, job titles, nature of duties and responsibilities, as well as duration of employment:
-% SCRIME\footnote{scrime.u-bordeaux.fr} (Lemur, Florent Berthaut, "Percussion par le geste", Metainstrument)\\
-Since the end of 2021, I have been the lead developer of the Viage client application\footnote{github.com/EuclidTradingSystems/viage} for the real-estate market. Ease of use, layout simplicity and navigation calrity have been central concerns in this work. Cross platform compatibility and performances also played a substantial role in trying to provide a sim-less experience for users of non technical background. Direct contact with the client also offers me a privileged look into the scrutiny required by the private sector in terms of convenience and intuitive interfaces. Concurrently, I am also working as the Systems administrator for the Euclid\footnote{euclidtradingsystems.com} company, overseeing the migration to their new data-center. This position involves hardware installation and maintenance, as well as the upkeep and improvement of the software infrastructure to ensure that daily operations are running smoothly. 
+Form 2017 to 2021 I have been employed at SCRIME, first as an intern, then as a technical assistant on a university contract, and finally as a engineer contracted by the CNRS\footnote{National scientific research center: www.cnrs.fr/en}. Under the direction of Myriam Desainte-Catherine and György Kurtág, Ihave been mainly working on three-dimensional audio and interactive scoring. The position I occupied provided technical support for projects combining research and artistic applications\footnote{Such as this project: www.compagnie-ever.com/aleas}. Working at SCRIME I was also introduced to it's many interactive hardware projects relevant to the research we propose, such as Christophe Havel's "Air percussion"\cite{havel:air}, Serge Delaubier's "MetaInstrument"\footnote{Web page for the latest version: www.pucemuse.com/meta-instrument-4}, and most notably, the "Lemur Input Device" interface\footnote{Web page detailing it's creation: www.jazzmutant.com/behindthelemur}.
+Since the end of 2021, I have been the lead developer of the Viage client application\footnote{Source code: github.com/EuclidTradingSystems/viage} for the real-estate market. Ease of use, layout simplicity and navigation calrity have been central concerns in this work. Cross platform compatibility and performances also played a substantial role in trying to provide a sim-less experience for users of non technical background. Direct contact with the client also offers me a privileged look into the scrutiny required by the private sector in terms of convenience and intuitive interfaces. Concurrently, I am also working as the Systems administrator for the Euclid\footnote{euclidtradingsystems.com} company, overseeing the migration to their new data-center. This position involves hardware installation and maintenance, as well as the upkeep and improvement of the software infrastructure to ensure that daily operations are running smoothly. 
 
 \section{Personal statement} % Max 500 words
 % Please highlight any additional information which has not been included elsewhere in the application, e.g.:
@@ -612,6 +611,7 @@ Since the end of 2021, I have been the lead developer of the Viage client applic
 %     • Why have you proposed this research topic?
 %     • Why do you feel there is a specific demand for the skill set that you wish to build?
 %     • Why are you particularly suited to this research field?
+During my time at SCRIME, I also organised weekly "meet ups" with local artists to introduce the latest features in \textit{ossia score} and \textit{Mosca}, propose use cases and collect user feedback. This experience outlined for me the difference between teaching, assisting and beta testing. Thinking initially that theses task could overlap, I now know from experience that they are mutually exclusive.
 %     • Which of your attributes demonstrate your capability to be a good researcher, e.g. motivation, commitment, thirst for knowledge?
 
 \section{Career training and development plan} % Max 1000 words
@@ -844,6 +844,20 @@ M. Popoff, R. Michon, T. Risset, Y. Orlarey, S. Letz. \emph{Towards an FPGA-Base
 
 \bibitem{hunt:poly}
 Samuel J. Hunt. \emph{Exploring polyrhythms, polymeters, and polytempi with the universal grid sequencer framework}. In Proceedings of the 15th International Conference on Audio Mostly (AM) 2020. Association for Computing Machinery, New York, NY, USA, 101–106. doi.org/10.1145/3411109.3411122 \\
+
+\bibitem{mott:mosca}
+I. Mott, T. Keller. \emph{Three-dimensional sound design with Mosca} 
+2017. In book: 16º Encontro Internacional de Arte e Tecnologia: \#16.ART: Artis intelligentia: IMAGINAR O REALPublisher: i2ADS – Instituto de Investigação em Arte, Design e Sociedade. \\
+
+\bibitem{mott:botanica}
+I. Mott. \emph{Botanica: navigable, immersive sound art} 
+2017. In book: 16º Encontro Internacional de Arte e Tecnologia: \#16.ART: Artis intelligentia: IMAGINAR O REALPublisher: i2ADS – Instituto de Investigação em Arte, Design e Sociedade. \\
+
+\bibitem{jaton:moscanica}
+G. Jaton, T. Keller. \emph{Réalité sonore augmentée // Réalité virtuelle audio} 2020. Conference: COLLOQUE INTERNATIONAL MONDES SPATIALISÉSAt: Saint-Étienne, France \\
+
+\bibitem{havel:air}
+V. Goudard, C. Havel, C. Havel, S. Marchand, M. Desainte-Catherine. \emph{Data Anticipation for Gesture Recognition in the Air Percussion}. Proceedings of the International Computer Music Conference (ICMC05), Sep 2005, Spain. pp.49–52. hal-00307897 \\
 
 \end{thebibliography}
 
