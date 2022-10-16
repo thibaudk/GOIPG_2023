@@ -448,7 +448,7 @@ Hardware interfaces for elastic timelines}
 % in the abstract or keywords.
 \begin{abstract} % Max 300 words
 
-Designing Human-Machine interactions for live performance can require representation and control of events through time. Several theoretical models have been developed to that effect over the years and some are implemented in software of various complexity. When it comes to hardware however, time is mostly understood as linear, unique and regular. This is notably the case for systems using one of the most prevalent physical interface to edit and play sequences, the button grid, with its rich history, from early drum machines to the ever-present Digital Audio Workstation controllers of today. This research, drawing from both fields of interactive media notation and New Interfaces for Musical Expression, will explore non-linear temporal models and propose an implementation of common physical interfaces and interactions better suited to these models. A prime candidate for this exploration would be the interactive scores as implemented in the software \textit{ossia score} \cite{jcelerier:thesis}, where branching timelines can be drawn to execute media sequences and their processing interactively, in parallel scenarios of variable speed and duration.
+Designing Human-Machine interactions for live performance can require representation and control of events through time. Several theoretical models have been developed to that effect over the years and some are implemented in software of various complexity. When it comes to hardware however, time is mostly understood as linear, unique and regular. This is notably the case for systems using one of the most prevalent physical interface to edit and play sequences, the button grid, with its rich history, from early drum machines to the ever-present Digital Audio Workstation controllers of today. This research, drawing from both fields of interactive media notation and New Interfaces for Musical Expression, will explore non-linear temporal models and propose an implementation of common physical interfaces and interactions better suited to these models. A prime candidate for this exploration would be the interactive scores as implemented in the software \textit{ossia score}\cite{jcelerier:thesis}, where branching timelines can be drawn to execute media sequences and their processing interactively, in parallel scenarios of variable speed and duration.
 The open-ended scheduling \textit{ossia score} allows would necessitate the elaboration of a divergent approach to translate to a hardware interface for musical expression.
 What computing challenges would such a translation entail ? This inquiry would first have to establish the minimal essential requirement in score's graphical user interface, and indeed, in its temporal model.
 
@@ -483,7 +483,7 @@ The field of interactive media notation addresses how the nature of scored mater
 Advances in this research area have culminated in the development of notable programs including Antescofo \cite{ircam:antescofo}, Iannix \cite{buzzing:iannix} or INScore \cite{grame:inscore}.
 Each in their own right, these software are unparalleled in the music technology landscape. The computing models they implement enable writing blueprints for automated processes to assist, accompany, enhance and often bypass the need for human-readable cues and performers. Their use has led to interesting superposition of roles that could be qualified by "scores as conductors", "instruments as scores" or "scores as final pieces". I posit here that hardware sequencers superimpose instruments and notation tools by design. Even in their most minimal, bare bone cases, sequencer layouts feature a playing interface, a human readable representation of a sequence end some editing functionalities.
 Interacting with these features bring the trial and error of composition to the real time of instrumental performance. This is referred to as a performance-driven system \cite{nash:liveness}. Where this is fairly common practice in the use of hardware, in the sole use of software however, such propensity for improvisation seems to only be matched in the very niche case of live coding \cite{blackwell:livecoding}.
-This convergence of practices that contributes to the appeal of hardware sequencers often comes at the price of rigid limitations in the manipulation of the structure, both in terms of the signal path and the form of the sequence itself.
+This convergence of practices contributing to the appeal of hardware sequencers often comes at the price of rigid limitations in the manipulation of the structure, both in terms of the signal path and the form of the sequence itself.
 In the interactive scores formalism on which we propose to base our work, arrangements and effect chains, like all synthesis and input processing, can be defined with flexible duration, inside interactive timelines. Here lies the main challenge in attempting to fit score's originality in a familiar practice. Even with button grids serving as very low-resolution touchscreens;
 and their various innovative uses of today\footnote{This forum entry lists some of these innovations: forum.ossia.io/t/simplified-portable-interfaces/198} allowing for example the display and control of basic widgets like sliders, routing matrices, patching environment or waveform editors; this research will necessitate a novel implementation. While exploring new paradigms\footnote{For example, a two dimensional representation of time as outlined in the following forum entry: forum.ossia.io/t/dynamic-reshaping-of-sequences/96}, we will strive to outline the specificities of performance-driven systems (as in \cite{nash:liveness}).
 
@@ -491,9 +491,9 @@ and their various innovative uses of today\footnote{This forum entry lists some 
 %\IEEEpubidadjcol
 
 \subsection{Existing literature}
-The field of interactive media notation \cite{ircam:antescofo} \cite{buzzing:iannix} \cite{grame:inscore} provide extensive references at the cross section of graphical user interface, human input and real time constraints, that are central to this work. 
+The field of interactive media notation \cite{ircam:antescofo}\cite{buzzing:iannix}\cite{grame:inscore} provide extensive references at the cross section of graphical user interface, human input and real time constraints, that are central to this work. 
 The elaboration of the branching timeline model was rooted in research applying Allen's interval algebra \cite{allombert:constraint} and Petry nets \cite{allombert:petri} to musical composition and performance. Conditional branching was later introduced \cite{toro:condition}, prompting further research to cope with the added complexity and uncertainty \cite{arias:colour}. Recently, a research project by a student group at the University of Bordeaux identified several ways to improve the user interface to interact with this model, by comparing common practices across nodal environments\footnote{Official web page: cmarty008.wixsite.com/ux-nodales}. On the hardware side, the latest innovations are most likely presented at the International Conference on New Interfaces for Musical Expression (NIME)\footnote{Official web page: nime.pubpub.org}. The 2021 edition featured both an extensive survey on the use of grid controllers \cite{rossmy:grid} and a taxonomy for the specific type of interaction they demand \cite{pust:taxonomy}. This can serve as a base assessment for our purposes. 
-NIME also features creations of new hardware for sequencing \cite{arellano:radear}, exploring in some cases non-linear approaches \cite{hayes:neurohedron}. Several research projects also focused on rethinking and improving upon more classical designs \cite{snyder:jd} including button grids \cite{rossmy:touch}. Innovative work on hardware may also be done in a effort to bridge accessibility issues \cite{forester:loopblocks}, especially when doing away with the common use of a computer screen and a mouse. These concerns may also be relevant in the work proposed here, since we hope to provide full access to interactive score authoring without relying on GUIs. Implementing a complete controller for the terminal could both be a useful milestone as well as a step towards greater accessibility, in particular for the sight-impaired. 
+NIME also features creations of new hardware for sequencing \cite{arellano:radear}, exploring in some cases non-linear approaches \cite{hayes:neurohedron}. Several research projects also focused on rethinking and improving upon more classical designs \cite{snyder:jd} including button grids \cite{rossmy:touch}. Innovative work on hardware may also be done in a effort to bridge accessibility issues \cite{forester:loopblocks}\cite{vetter:tangible}, especially when doing away with the common use of a computer screen and a mouse. These concerns may also be relevant in the work proposed here, since we hope to provide full access to interactive score authoring without relying on GUIs. Implementing a complete controller for the terminal could both be a useful milestone as well as a step towards greater accessibility, in particular for the sight-impaired \cite{payne:blind}. More Broadly, the critique of human-computer interaction designed with windows, icons, menus and a pointer (WIMP) provides us with a rich background in user input and feedback \cite{baudouin:instrumental}\cite{beaudouin:interaction}. 
 
 \subsection{Contribution to existing knowledge}
 Even with this wealth of available research in the domain of creative interfaces, the private sector seems to lead the way, at least in terms of popularization the latest innovations. If many of the products on the market today where made possible by previous academic research, it is indeed land mark commercial products and their wide spread availability that set the standard. Today, this method of ``punching in'' steps along a fixed timeline has become a staple of the producer's tool-set.
@@ -514,26 +514,40 @@ Note: This pursuit for seamless interactions would also tie in with previous the
 
 \section{Research design and methodology} % Max 500 words
 % Please detail the research design and methodologies to be employed in carrying out your scholarship which should be described in sufficient detail to demonstrate your thorough understanding of the research topic: 
-At the outset, it is our belief that common practices on hardware interfaces, consumer preferences and comparative analysis of interactive systems is already the object of previous research. As such, we consider selecting for a significant population sample, conducting interviews, collecting and analysing user data to be outside of the scope of this research. Based on this existing academic literature \cite{rossmy:grid} \cite{pust:taxonomy}, as well as commercial product reviews, we will first aim to establish a set of basic representation elements, compatible with our devices of choice. This first exploratory phase will also necessitate delving into theoretical aspects of temporal models \cite{milliere:topologie} \cite{toro:condition} to ensure that our basic elements are suited to a variety of time representations. We should then be able to move from representation, to control, and finally to edition of temporal models. At every step of this progression, we hope to offer partial answers to our problematic, firstly put in most general of terms: "How can we interact with open ended, abstract software on finite physical interfaces ?" This question is particularly delicate with software straying far away from the norm, and hardware interfaces incarnating conventions in musical expression. Such a set of generic temporal elements can already be found in the branching timeline model for example  \cite{jcelerier:thesis}. It can be summarized by:
+At the outset, it is our belief that common practices on hardware interfaces, consumer preferences and comparative analysis of interactive systems is already the object of previous research. As such, we consider selecting for a significant population sample, conducting interviews, collecting and analysing user data to be outside of the scope of this research. Instead, we will base our assessment of ergonomic design, intuitiveness and accessibility on existing academic literature \cite{rossmy:grid}\cite{pust:taxonomy}, as well as commercial product reviews. Concurrently, we will aim to establish a set of basic time representation elements, compatible with our devices of choice. This first exploratory phase will also necessitate delving into theoretical aspects of temporal models \cite{toro:condition}\cite{milliere:topologie} to ensure that our basic elements are suited to a variety of time formalism. For our theoretical proposition to be exhaustive, we ought to divide it in parts of increasing complexity, from representation, to control, and finally to edition of temporal models. At every step of this progression, we hope to offer answers to our problematic, firstly put in most general of terms: ``How can we interact with open ended, abstract software on finite physical interfaces ?'' This question is particularly delicate with software straying far away from the norm, and hardware interfaces incarnating conventions in musical expression. Such a set of generic temporal elements was defined in the branching timeline model of interactive scores\cite{jcelerier:thesis}. It can be summarised by the following list:
 \begin{itemize}
     \item \textit{States}: a single "point" in time
     \item \textit{Events}: a group of simultaneous \textit{States}
     \item \textit{Syncs}: a group of simultaneous \textit{Events}
     \item \textit{Transitions}: instantaneous "jump" between two distinct \textit{Syncs}
-    \item \textit{Intervals}: flexible duration connecting two distinct \textit{States}
+    \item \textit{Intervals}: flexible duration connecting two distinct \textit{Syncs}
     \item \textit{Scenarios}: spanning the duration of an \textit{Interval}, it can contain all other elements
 \end{itemize}
-While this reduced set may suffice to represent interactive scores, additional elements are are required to provide basic control:
+While this reduced set may suffice to represent interactive scores, additional elements are required to provide basic control:
 \begin{itemize}
     \item \textit{Triggers}: extends or interrupts the predefined duration of \textit{Intervals}
     \item \textit{Conditions}: Allows the selection between parallel Intervals
 \end{itemize}
-Are more elements required to complete our progression from representation and control to edition ? 
-How can his set be restricted ?
-How can tradition hardware sequencing be defined with a similar set ?
-after defining Defining our set of generic elements, they could then be reconsidered in the specific context of musical time and instrumental performance. 
-Edition is the part we claim to be the innovative part of this research. 
-How can musicians rewrite a score as they are playing it ?
+%%%%%%%%
+As we claim Edition to be an innovative part of this research, we may need to extend this set again, keeping in mind our objective of simplicity and minimalism. Reaching this stage of the research introduces the question: ``How can musicians rewrite a score as they are playing it ?''
+A comparable set of sequencer elements may be defined as follows:
+\begin{itemize}
+    \item \textit{Steps}: a single ``point'' in time
+    \item \textit{Sequences}: a circular chain of \textit{Steps}, spaced in multiples of a predefined musical subdivision
+    \item \textit{Patterns}: a group of concurrent \textit{Sequences}
+    \item \textit{Songs}: a linear arrangement of \textit{Patterns}
+\end{itemize}
+This list also features a one-to-one relationship with hardware interfaces elements: two display modes represent either \textit{Steps} or \textit{Patterns} with a single backlit button, and \textit{Sequences} or \textit{Songs} with one or several rows of backlit buttons.
+Here again, control requires additional elements, defining for example the direction of the sequence:
+\begin{itemize}
+    \item Forward
+    \item Backward
+    \item Mirrored (forwards and backwards alternatively)
+    \item Random
+\end{itemize}
+Throughout our three stage evolution, we'll attempt to bridge this gap between general temporal models and the particulars of musical time and instrumental performance. 
+
+% The software design aspect of our research will follow this structure, to propose compatible yet isolated solutions to our problematic. A more modular approach will fit best our methodology, as well as improving code legibility, maintenance and re-usability. All development will be open source, thoroughly documented and tested, namely through unit testing\footnote{Wikipedia entry for unit testing: en.wikipedia.org/wiki/Unit\_testing} and continuous integration\footnote{Wikipedia entry for continuous integration: en.wikipedia.org/wiki/Continuous\_integration}.
 
 \section{Schedule} % Max 500 words
 \subsection{Milestones and deliverables}
@@ -542,10 +556,10 @@ How can musicians rewrite a score as they are playing it ?
 \begin{enumerate}
     \item Scenario display
     \begin{enumerate}
-        \item Elaboration of the most rudimentary graphical semantic
+        \item Elaboration of a rudimentary temporal semantic
         \item Appraisal of the most appropriate navigation interactions
         \item Assessment of additional visual cues and their importance (colour coding, basic animations ...)
-        \item Publication of the thesis's first chapter on the proposed graphical representation of interactive scores
+        \item Publication of the thesis's first chapter on the proposed representation of interactive scores
     \end{enumerate}
     \item Execution control
     \begin{enumerate}
@@ -557,40 +571,39 @@ How can musicians rewrite a score as they are playing it ?
     \item Generalisation
     \begin{enumerate}
         \item Exploring a variety of other common interfaces and their compatibility with the current system
-        \item Improving the current system for wider compatibility with current and future devices.
+        \item Exploration of alternative temporal paradigms.
         \item Publication of the thesis's third chapter documenting a generic approach to interaction on hardware interfaces
     \end{enumerate}
     \item Edition
     \begin{enumerate}
-        \item Expanding original set of hot keys on the score software to reach full editing capabilities without the mouse on the original user interface
+        \item Expanding original set of hotkeys on the \textit{ossia score} software to reach full authoring capabilities without the mouse on the original user interface
         \item Cross examining keyboard based interactions in the area of live coding and software accessibility for the sight impaired
-        \item Evaluation of necessary textual feedback (data can only be communicated to the user through text)
+        \item Evaluation of necessary textual feedback (data that can only be communicated to the user through text)
         \item Exploration of preformative substitute to menus (and dreaded "menu diving")
-        \item Experimentation of more unusual uses of hardware interfaces (like the patching environment of the Empress Zoya\footnote{Official web page: empresseffects.com/products/zoia})
+        \item Experimentation of more unusual uses of hardware interfaces (like the patching environment of the Empress Zoia\footnote{Official web page: empresseffects.com/products/zoia})
         \item Publication of the thesis's forth chapter, accompanying an official release of the system considered "production ready".
     \end{enumerate}
     \item Going further
     \begin{enumerate}
         \item Expansion of compatibility to heterogeneous configurations on multiple hardware interfaces
-        \item Experimentation with fully embedded interactive score without traditional mouse, keyboards an computer screen
+        \item Experimentation with fully embedded interactive score without traditional mouse, keyboard and computer screen
         \item Exploration of potential hardware acceleration
-        \item Assessment of the benefit in collaborative projects between traditional interactive score authoring and our system
+        \item Appraisal of other potential uses (non-artistic) for our temporal formalism
+        \item Assessment of the benefit in collaborative projects between current interactive score authoring, common step sequencing and our system
         \item Full Thesis
     \end{enumerate}
 \end{enumerate}
 
 \subsection{Risks}
-Too close to existing literature, so the research ought to be more applied, or too far form the existent, so the research ought to be more theoretical.
-Human trials necessary.
-extracting relevant and reliable data from a dense market
+Possible risks preventing us from reaching our milestones may stem from limitations in our proposed methodology. Our hypothesis assumes the possibility of bridging two distinct literary corpus, theories relating to time and studies of hardware interaction in Music. Two possible blockage can then be anticipated: either the gap is too wide between these fields, and no significant stride can be made without a missing link, or the connections are too obvious, trivialising our endeavour. We also dismiss the need to run human trials at the outset, and prefer relying on preexisting, dedicated studies. It is possible that this approach turns out to be insufficient. The design of our temporal model may not fit hardware interfaces as well as expected for example. Even if it does fit, it may require an original set of user interactions to be operated, making previous studies of established practices largely irrelevant for our purposes. Apart from academic studies, we hope to benefit form consumer reports of commercial products. Extracting relevant and reliable data from such a dense market may also prove challenging: navigating corporate bias on one side and anecdotal evidence on the other.
 
 \subsection{Contingency plans}
-If our initial assessment reveals itself to be lacking, i.e if we do find out that human trains are necessary, we reserve the rite to reshape our schedule and 
+Our proposition may reveal itself too distant from the existing literature it hopes to connect. In this case, a more theoretical approach to bridge this gap should take precedent in our schedule. The opposite may be true, and our work ought to be more applied, delving deeper in specific use cases rather than general considerations. If human trails are required against our initial assumption, we reserve the right to reshape our schedule accordingly. Relevant ethical concerns raised by conducting interviews and retrieving personal date will have to be addressed. Courses on market research and product management (on campus or online) may also alleviate possible difficulties when involving the private sector in our research.
 
 \section{Specialist knowledge} % Max 500 words
 % Please describe any specialist knowledge or data required to undertake your proposed research, such as language competency, technical skills or use of specialist software. If this knowledge or data is not already in place, details should be provided as to how it will be acquired over the course of the scholarship: 
 A thorough theoretical understanding of the relevant temporal models will be necessary to propose striped down representations. Familiarity with the state of the art in this field will be acquired thorough reading relevant papers and strengthening background knowledge of more general use cases for temporal models in computer science and their origin. Theoretical understanding of user interaction and feedback in the field of ergonomics and human machine interaction (HMI) can also be acquired through the relevant literature. However, this particular aspect of our research may also require less conventional approaches to data collection: Since hardware interfaces are consumer goods,  academic research and market studies, including customer reports, forum or blog entries, will form a fuller picture.
-Additionally, in 2023, the new version of the programming language C++ (c++23) will be officially released. The previous version (c++20) introduced major new features that this version will further extend. Mastering this modern, more generic approach to programming\footnote{This blog entry outlines  the use of these modern techniques in the writing of audio plugins: ossia.io/posts/reflection/} will be instrumental in ensuring the output of this research is as robust and future proof as possible. To that effect, Maynooth University's course MU811 "Software Sound Synthesis" provides in-depth knowledge of musical programming environments. MU816 "Music Application Programming II" would allow exploration of newer versions of C++ and other courses from Computer Science can further help with necessary knowledge acquisition.
+Additionally, in 2023, the new version of the programming language C++ (c++23) will be officially released. The previous version (c++20) introduced major new features in 2020 that this version will further extend. Mastering this modern, more generic approach to programming\footnote{This blog entry outlines  the use of these modern techniques in the writing of audio plugins: ossia.io/posts/reflection/} will be instrumental in ensuring the output of this research is as robust and future proof as possible. To that effect, Maynooth University's course MU811 "Software Sound Synthesis" provides in-depth knowledge of musical programming environments. MU816 "Music Application Programming II" would allow exploration of newer versions of C++ and other courses from Computer Science can further help with necessary knowledge acquisition.
 % embedded systems
 % low level machine-to-machine communication protocols.
 
@@ -616,7 +629,7 @@ Dr Gordon Delap and I where awarded the 2021 Ulysses grant. Our ongoing project 
 
 \subsection{Research achievements} % Max 300 words
 % Please provide any additional information regarding your research achievements to date such as publications, research awards, creation of data sets and databases, conference papers, patents, excavations, public broadcasts, stage performances, creative writing, creative productions and/or exhibitions:
-I am very fortunate to have participated to many workshop and conferences in France and abroad since 2019. That year in particular, I presented my work at the Linux Audio Conference at Stanford university. My colleague Jean-Michaël Celerier and I then hosted the following edition of the conference in Bordeaux\footnote{Main web page: lac2020.sciencesconf.org}, with the help of both public and private partners. 
+In 2019, I was very fortunate to presente my work at the Linux Audio Conference at Stanford university. My colleague Jean-Michaël Celerier and I then hosted the following edition of the conference in Bordeaux\footnote{Main web page: lac2020.sciencesconf.org}, with the help of both public and private partners. 
 My expertise in multichannel audio also brought me in 2020 to the university of Bilbao, where I was asked to coordinate the installation of an immersive sound system, and introduce students and faculty to it's use.
 
 \subsection{Work experience} % Max 300 words
@@ -848,6 +861,18 @@ B. Rossmy, S. Unger, A. Wiethoff. \emph{TouchGrid – Combining Touch Interactio
 
 \bibitem{forester:loopblocks}
 A. Förster, M. Komesker. \emph{LoopBlocks: Design and Preliminary Evaluation of an Accessible Tangible Musical Step Sequencer}. NIME 2021. doi.org/10.21428/92fbeb44.f45e1caf \\
+
+\bibitem{vetter:tangible}
+J. Vetter. \emph{Tangible Signals - Prototyping Interactive Physical Sound Displays}. TEI '21: Proceedings of the Fifteenth International Conference on Tangible, Embedded, and Embodied Interaction. February 2021. Article No.: 45. Pages 1–6. https://doi.org/10.1145/3430524.3442450
+
+\bibitem{payne:blind}
+W. C. Payne, A. Yixuan Xu, F. Ahmed, L. Ye, A. Hurst. \emph{How Blind and Visually Impaired Composers, Producers, and Songwriters Leverage and Adapt Music Technology}. ASSETS '20: The 22nd International ACM SIGACCESS Conference on Computers and Accessibility. October 2020. Article No.: 35. Pages 1–12. https://doi.org/10.1145/3373625.3417002
+
+\bibitem{baudouin:instrumental}
+M. Beaudouin-Lafon. \emph{Instrumental interaction: an interaction model for designing post-WIMP user interfaces}. CHI '00: Proceedings of the SIGCHI conference on Human Factors in Computing Systems. April 2000. Pages 446–453. https://doi.org/10.1145/332040.332473
+
+\bibitem{beaudouin:interaction}
+M. Beaudouin-Lafon. \emph{Designing interaction, not interfaces}. AVI '04: Proceedings of the working conference on Advanced visual interfaces. May 2004. Pages 15–22. https://doi.org/10.1145/989863.989865
 
 \bibitem{hunt:poly}
 S. J. Hunt. \emph{Exploring Polyrhythms, Polymeters, and Polytempi
